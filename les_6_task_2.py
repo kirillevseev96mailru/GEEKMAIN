@@ -1,6 +1,7 @@
 import random
 import sys
 
+
 MIN_ITEM = 0
 MAX_ITEM = 100
 

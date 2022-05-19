@@ -1,6 +1,14 @@
 import random
 import sys
 
+def size(data,Sum_Memory):
+    Sum_Memory = Sum_Memory + sys.getsizeof(data)
+    for item in data:
+        Sum_Memory = Sum_Memory + sys.getsizeof(item)
+
+    return Sum_Memory
+
+
 MIN_ITEM = 0
 MAX_ITEM = 100
 
@@ -18,8 +26,9 @@ for i in range(len(array)):
 print(mini, maxi)
 
 Memory_expended = sys.getsizeof(MIN_ITEM) + sys.getsizeof(MAX_ITEM) + sys.getsizeof(mini)
-Memory_expended = sys.getsizeof(maxi) + sys.getsizeof(n) + sys.getsizeof(array) + sys.getsizeof(i)
+Memory_expended = sys.getsizeof(maxi) + sys.getsizeof(n) + size(array,0) + sys.getsizeof(i)
 
+print(sys.getsizeof(array))
 
 print(f'Затраченная память равна: {Memory_expended}')
 
