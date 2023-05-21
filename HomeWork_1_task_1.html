@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+    {% for page in HomeTask_1 %}
+    <div>
+        <h2>{{ page.Header.name1 }}{{ page.Header.name2 }}{{ page.Header.name3 }}</h2>
+        <ol>
+            <li>{{ page.Menu.item1 }}</li>
+            <li>{{ page.Menu.item2 }}</li>
+            <li>{{ page.Menu.item3 }}</li>
+        </ol>
+        <footer>{{ page.Footer}}</footer>
+    </div>
+    {% endfor %}
+
+</body>
