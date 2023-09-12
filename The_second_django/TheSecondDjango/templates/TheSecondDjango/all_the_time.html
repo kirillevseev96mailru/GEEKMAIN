@@ -15,6 +15,7 @@
                 {% for product in order.name_product.all %}
                     <li>{{ product.name }} - {{ product.description }} - {{ product.quantity }} - {{ order.price }}</li>
                         {{ order.date }}
+                        {{ product.image }}
                     <br><br>
                 {% endfor %}
             {% elif day > 7 and day <= 30 %}
@@ -22,6 +23,7 @@
                 {% for product in order.name_product.all %}
                     <li>{{ product.name }} - {{ product.description }} - {{ product.quantity }} - {{ order.price }}</li>
                         {{ order.date }}
+                        {{ product.image }}
                     <br><br>
                 {% endfor %}
             {% elif  day > 30 and day <= 365 %}
@@ -29,6 +31,7 @@
                 {% for product in order.name_product.all %}
                     <li>{{ product.name }} - {{ product.description }} - {{ product.quantity }} - {{ order.price }}</li>
                         {{ order.date }}
+                        {{ product.image }}
                     <br><br>
                 {% endfor %}
             {% endif %}

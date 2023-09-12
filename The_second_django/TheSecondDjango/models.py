@@ -18,6 +18,7 @@ class Products(models.Model):
     price = models.IntegerField()
     quantity = models.IntegerField()
     date = models.DateTimeField()
+    image = models.ImageField(null=True)
 
     def __str__(self):
         return f'{self.name}'
