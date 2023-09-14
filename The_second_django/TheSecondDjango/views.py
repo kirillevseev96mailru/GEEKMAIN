@@ -1,10 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from .models import Products, Orders, Clients
 from datetime import date, datetime
 from TheSecondDjango.forms import ImageForm
 from django.core.files.storage import FileSystemStorage
+from django.views.generic import ListView, DetailView
 
 
 def index(request):
@@ -40,3 +39,39 @@ def upload_image(request):
     else:
         form = ImageForm()
     return render(request, 'TheSecondDjango/upload_image.html', {'form': form})
+
+
+class ListOfProducts(ListView):
+    template_name = 'TheSecondDjango/list_of_products.html'
+    model = Products
+    context_object_name = 'products'
+
+
+class ListOfOrders(ListView):
+    template_name = 'TheSecondDjango/list_of_orders.html'
+    model = Orders
+    context_object_name = 'orders'
+
+
+class ListOfClients(ListView):
+    template_name = 'TheSecondDjango/list_of_clients.html'
+    model = Clients
+    context_object_name = 'clients'
+
+
+class DetailProduct(DetailView):
+    template_name = 'TheSecondDjango/detail_product.html'
+    model = Products
+    context_object_name = 'product'
+
+
+class DetailOrder(DetailView):
+    template_name = 'TheSecondDjango/detail_order.html'
+    model = Orders
+    context_object_name = 'order'
+
+
+class DetailClient(DetailView):
+    template_name = 'TheSecondDjango/detail_client.html'
+    model = Clients
+    context_object_name = 'client'
