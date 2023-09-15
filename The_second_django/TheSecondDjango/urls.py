@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import *
 
 
@@ -13,4 +13,6 @@ urlpatterns = [
     path('product/<int:pk>', DetailProduct.as_view()),
     path('order/<int:pk>', DetailOrder.as_view()),
     path('client/<int:pk>', DetailClient.as_view()),
+    #path('__debug__/', include("debug_toolbar.urls")),
 ]
+
